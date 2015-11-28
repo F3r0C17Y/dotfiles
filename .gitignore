@@ -1,0 +1,9 @@
+#vim
+vim/tmp/*
+vim/.netrwhist
+vim/custom-dictionary.*
+# tmp files
+*.*~
+*~
+*.swp
+*.*bak
