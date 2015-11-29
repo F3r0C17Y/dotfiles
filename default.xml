@@ -3,6 +3,10 @@
   <remote name="github" fetch=".." />
   <default revision="master" remote="github" />
 
+  <project path="."
+           name="Ferocity/dotfiles"
+           remote="github" />
+  
   <project path="vim/autoload"
            name="tpope/vim-pathogen.git" 
 	   remote="github" />
