@@ -1,10 +1,9 @@
-#repo
-.repo
 #vim
 vim/tmp/*
 vim/.netrwhist
 vim/custom-dictionary.*
 vim/autoload
+vim/bundle
 # tmp files
 *.*~
 *~
