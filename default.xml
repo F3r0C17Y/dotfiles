@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="origin" fetch="git://git.github.com/" />
+  <default revision="master" remote="origin" />
+
+  <project path="vim/autoload"
+           name="tpope/vim-pathogen.git" remote="origin" />
+
+</manifest>
