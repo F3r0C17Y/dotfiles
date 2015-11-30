@@ -2,8 +2,7 @@
 vim/tmp/*
 vim/.netrwhist
 vim/custom-dictionary.*
-vim/autoload
-vim/bundle
+vim/autoload/pathogen.vim
 # tmp files
 *.*~
 *~
