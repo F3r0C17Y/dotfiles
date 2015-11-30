@@ -6,7 +6,7 @@ syntax on
 
 filetype plugin indent on
 
-set compatible
+set nocompatible
 set hidden
 set wildmenu
 set showcmd
