@@ -1,5 +1,17 @@
 #!/bin/bash
 
-mkdir -p vim/autoload vim/bundle
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+PWD=$(pwd)
+BACKUP=$HOME/dotfile_bak
 
+mkdir -p $BACKUP
+
+for file in $PWD/*
+do
+    filename=$(basename $file)
+    if [[ "$filename" != "$(basename $0)" ]]; then
+        mv -f $HOME/.$filename $BACKUP/
+        ln -s $PWD/$filename $HOME/.$filename
+    fi
+done
+
+git submodule init && git submodule update
