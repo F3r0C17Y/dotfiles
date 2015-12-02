@@ -3,8 +3,8 @@
 PWD=$(pwd)
 BACKUP=$HOME/dotfile_bak
 
+echo "Make backups and create dotfiles"
 mkdir -p $BACKUP
-
 for file in $PWD/*
 do
     filename=$(basename $file)
@@ -16,6 +16,11 @@ done
 
 ln -sf $PWD/vim $HOME/.vim
 
+echo "Init and update Submodules"
 git submodule init && git submodule update
 
 ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim 
+
+pushd powerline/fonts/
+./install.sh
+popd
