@@ -16,3 +16,9 @@
 [submodule "powerline/fonts"]
 	path = powerline/fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "vim/bundle/cscope-maps"]
+	path = vim/bundle/cscope-maps
+	url = https://github.com/joe-skb7/cscope-maps.git
+[submodule "vim/bundle/vim-tagbar"]
+	path = vim/bundle/vim-tagbar
+	url = https://github.com/majutsushi/tagbar.git
