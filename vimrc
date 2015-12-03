@@ -4,13 +4,15 @@ execute pathogen#infect()
 " enable syntax highlighting
 syntax on
 filetype plugin indent on
+filetype plugin on
 
+set t_Co=256
 set background=dark
 colorscheme desert 
 
-"set lazyredraw              "dont redraw while execute macro
-set nocompatible
-set hidden
+"set lazyredraw              "dont redraw while execute macro (could lead to errors with airline)
+set nocompatible            "dont use vi compatiblility mode
+set hidden                  
 set wildmenu
 set showcmd
 set hlsearch                " enable highlight search
@@ -29,7 +31,7 @@ set showmatch               "show matching bracets
 
 set colorcolumn=81
 execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+highlight ColorColumn ctermbg=DarkGrey ctermfg=DarkRed
 
 
 if has('gui_running')
@@ -51,6 +53,15 @@ set nostartofline
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+
+" Filetype-specific formatting
+au FileType c,cpp,h,hpp set formatoptions+=ro "foldmethod=syntax
+au FileType c set omnifunc=ccomplete#Complete
+au FileType make set noexpandtab shiftwidth=4
+" au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
+au FileType vim setlocal foldmethod=marker
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keymappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,11 +114,8 @@ let g:airline_theme = 'powerlineish'
 nmap <F8> :TagbarToggle<CR>
 
 
-" Enable OmniCompletion
-" http://vim.wikia.com/wiki/Omni_completion
-filetype plugin on
+" OmniCompletion
 set omnifunc=syntaxcomplete#Complete
-
 " Configure menu behavior
 " http://vim.wikia.com/wiki/VimTip1386
 set completeopt=longest,menuone
@@ -127,10 +135,10 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 imap <C-@> <C-Space>
 
 " Popup menu hightLight Group
-highlight Pmenu ctermbg=13 guibg=LightGray
-highlight PmenuSel ctermbg=7 guibg=DarkBlue guifg=White
-highlight PmenuSbar ctermbg=7 guibg=DarkGray
-highlight PmenuThumb guibg=Black
+highlight Pmenu     ctermbg=166 ctermfg=0    guibg=LightGray
+highlight PmenuSel  ctermbg=136  ctermfg=0    guibg=DarkBlue      guifg=White
+highlight PmenuSbar ctermbg=178  ctermfg=0    guibg=DarkOrange    guifg=White
+highlight PmenuThumb ctermbg=178 ctermfg=0    guibg=Black
 
 " Enable global scope search
 let OmniCpp_GlobalScopeSearch = 1
@@ -146,4 +154,9 @@ let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 " Don't select first item in pop-up menu
 let OmniCpp_SelectFirstItem = 0
+
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_DisplayMode = 1
+let OmniCpp_ShowScopeInAbbr = 0
+let OmniCpp_DefaultNamespaces = ["std"]
 
