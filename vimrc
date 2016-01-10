@@ -29,9 +29,9 @@ set visualbell
 set t_vb=
 set showmatch               "show matching bracets
 
-set colorcolumn=81
-execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=DarkGrey ctermfg=DarkRed
+"set colorcolumn=81
+"execute "set colorcolumn=" . join(range(81,335), ',')
+"highlight ColorColumn ctermbg=DarkGrey ctermfg=DarkRed
 
 
 if has('gui_running')
