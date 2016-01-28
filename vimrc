@@ -109,6 +109,7 @@ let g:airline_theme = 'powerlineish'
 
 " NERDTree
 :nnoremap <leader>n :NERDTreeToggle<CR>
+nmap <F7> :NERDTreeToggle<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
