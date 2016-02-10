@@ -161,3 +161,6 @@ let OmniCpp_DisplayMode = 1
 let OmniCpp_ShowScopeInAbbr = 0
 let OmniCpp_DefaultNamespaces = ["std"]
 
+" ExtraWhitespace
+highlight ExtraWhitespace ctermbg=red
+
