@@ -24,4 +24,7 @@
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/vim-better-whitespace"]
 	path = vim/bundle/vim-better-whitespace
-	url = git://github.com/ntpeters/vim-better-whitespace.git
+    url = git://github.com/ntpeters/vim-better-whitespace.git
+[submodule "pwndbg"]
+	path = pwndbg
+	url = https://github.com/pwndbg/pwndbg.git

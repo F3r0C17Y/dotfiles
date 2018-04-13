@@ -14,7 +14,9 @@ do
     fi
 done
 
-ln -sf $PWD/vim $HOME/.vim
+if [ ! -e $HOME/.vim ]; then
+    ln -sf $PWD/vim $HOME/.vim
+fi
 
 echo "Init and update Submodules"
 git submodule init && git submodule update
@@ -23,4 +25,8 @@ ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pa
 
 pushd powerline/fonts/
 ./install.sh
+popd
+
+pushd pwndbg
+./setup.sh
 popd
