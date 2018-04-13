@@ -10,6 +10,8 @@ execute once:
     ./install.sh
 
 # updateing
-
     git pull
     git submodule update
+
+# get latest module
+    git submodule -q foreach git pull origin HEAD

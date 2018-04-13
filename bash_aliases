@@ -11,7 +11,7 @@ alias ...='cd ../..'
 # start gedit independent from shell
 g()
 {
-(gedit $* &)
+(gvim $* &)
 }
 
 # qtcreator starts'n'open a cmake project directly
