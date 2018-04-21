@@ -62,7 +62,7 @@ git_checkout vim/bundle/vim-better-whitespace https://github.com/ntpeters/vim-be
 git_checkout powerline/fonts https://github.com/powerline/fonts.git master
 
 if [ ! -e $PWD/vim/autoload/pathogen.vim ]; then
-	ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim 
+	ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim
 fi
 
 pushd powerline/fonts/

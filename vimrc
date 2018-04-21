@@ -8,11 +8,11 @@ filetype plugin on
 
 set t_Co=256
 set background=dark
-colorscheme desert 
+colorscheme desert
 
 "set lazyredraw              "dont redraw while execute macro (could lead to errors with airline)
 set nocompatible            "dont use vi compatiblility mode
-set hidden                  
+set hidden
 set wildmenu
 set showcmd
 set hlsearch                " enable highlight search
@@ -36,7 +36,7 @@ set showmatch               "show matching bracets
 
 if has('gui_running')
     " GUI Vim
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10   
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 else
     " Console Vim
     set mouse=a     "Mouse support
@@ -82,7 +82,7 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'angr'
 
 " unicode symbols
 "let g:airline_left_sep = '»'

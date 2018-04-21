@@ -1,17 +1,10 @@
 # dotfiles
 
-# first time setup
+# first time setup & update
 simply execute:
     ./setup.sh
 
-# Powerline fonts
-execute once:
-    cd powerline/fonts
-    ./install.sh
+# Troubleshoot
+- If vim does not display vim-airline at bottom correctly most of the time a wrong default console font is selected. Select a Monospace Font e.g. Deja Vu Powerline
 
-# updateing
-    git pull
-    git submodule update
 
-# get latest module
-    git submodule -q foreach git pull origin HEAD
