@@ -1,8 +1,7 @@
-#vim
-vim/tmp/*
-vim/.netrwhist
-vim/custom-dictionary.*
-vim/autoload/pathogen.vim
+/backup
+#git repos
+/vim
+/pwndbg
 # tmp files
 *.*~
 *~
