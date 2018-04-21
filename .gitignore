@@ -2,6 +2,7 @@
 #git repos
 /vim
 /pwndbg
+/powerline
 # tmp files
 *.*~
 *~
