@@ -38,7 +38,7 @@ do
     filename=$(basename $file)
     if [ "$filename" != "$(basename $0)" ] && [ ! -d "${filename}" ]; then
         mv -f $HOME/.$filename $BACKUP/
-        ln -s $PWD/$filename $HOME/.$filenam
+        ln -sf $PWD/$filename $HOME/.$filename
     fi
 done
 
@@ -47,12 +47,9 @@ if [ ! -e $HOME/.vim ]; then
 fi
 
 echo "Init git modules"
-#git submodule init && git submodule update
-
-
-git_checkout pwndbg https://github.com/pwndbg/pwndbg.git stable
 mkdir -p ${PWD}/vim/autoload
 mkdir -p ${PWD}/vim/bundle
+git_checkout pwndbg https://github.com/pwndbg/pwndbg.git stable
 git_checkout vim/autoload/vim-pathogen https://github.com/tpope/vim-pathogen.git master
 git_checkout vim/bundle/nerdtree https://github.com/scrooloose/nerdtree.git master
 git_checkout vim/bundle/vim-airline https://github.com/bling/vim-airline.git master
@@ -64,8 +61,8 @@ git_checkout vim/bundle/vim-tagbar https://github.com/majutsushi/tagbar.git mast
 git_checkout vim/bundle/vim-better-whitespace https://github.com/ntpeters/vim-better-whitespace.git master
 git_checkout powerline/fonts https://github.com/powerline/fonts.git master
 
-if [ -ne $PWD/vim/autoload/pathogen.vim ]; then
-ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim 
+if [ ! -e $PWD/vim/autoload/pathogen.vim ]; then
+	ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim 
 fi
 
 pushd powerline/fonts/
