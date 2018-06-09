@@ -40,6 +40,20 @@ if has('gui_running')
 else
     " Console Vim
     set mouse=a     "Mouse support
+
+    if exists('+selectmode')
+        set slm=mouse,key
+    endif
+    if exists('+mousemodel')
+        set mousemodel=popup
+    endif
+    if exists('+keymodel')
+        set keymodel=startsel
+    endif
+    if exists('+selection')
+        set selection=inclusive
+    endif
+
     " Transparent console vim background
     hi Normal ctermbg=none
 endif
