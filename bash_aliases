@@ -19,4 +19,7 @@ qt()
 {
 (qtcreator CMakeLists.txt &)
 }
- 
+
+journal() {
+	command journalctl --no-pager $@ | ccze -A | less -R
+}
