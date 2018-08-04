@@ -8,10 +8,13 @@ alias l='ls -CF --group-directories-first'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+# direnv hook
+eval "$(direnv hook bash)"
+
 # start gedit independent from shell
 g()
 {
-(gvim $* &)
+(pluma $* &)
 }
 
 # qtcreator starts'n'open a cmake project directly
@@ -20,6 +23,6 @@ qt()
 (qtcreator CMakeLists.txt &)
 }
 
-journal() {
+jj() {
 	command journalctl --no-pager $@ | ccze -A | less -R
 }
