@@ -8,3 +8,4 @@
 *~
 *.swp
 *.*bak
+/config/custom/*

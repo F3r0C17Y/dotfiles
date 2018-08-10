@@ -4,9 +4,6 @@
 	type = cat-file -t
 	dump = cat-file -p
 	wdiff = diff --color-words
-[user]
-	email = christian.fries123@gmail.com
-	name = Christian Fries
 [push]
 	default = simple
 [color]

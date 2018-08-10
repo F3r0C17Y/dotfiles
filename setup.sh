@@ -15,11 +15,31 @@ function progressBar()
     done
 }
 
+
+customize_git()
+{
+    if [ ! -e "$PWD/config/custom/gitconfig" ]; then
+        echo "Git configuration"
+        echo "-----------------"
+        echo -n "Enter your name: "
+        read name
+        echo -n "Enter your email address: "
+        read email
+        echo "[user]"             > "$PWD/config/custom/gitconfig"
+        echo "  email = $email"   >> "$PWD/config/custom/gitconfig"
+        echo "  name = $name"     >> "$PWD/config/custom/gitconfig"
+        echo "-----------------"
+    fi
+
+}
+
 combine_dotfiles()
 {
     local name=$1
     cat "$PWD/config/${name}" > "${HOME}/.${name}"
-    cat "$PWD/config/custom/${name}" >> "${HOME}/.${name}"
+    if [ -e "$PWD/config/custom/${name}" ]; then
+        cat "$PWD/config/custom/${name}" >> "${HOME}/.${name}"
+    fi
 }
 
 make_dotfiles()
@@ -107,7 +127,6 @@ if [ ! -e "$PWD/setup.sh" ]; then
     exit -1
 fi
 
-
 while getopts "u" opt; do
   case ${opt} in
     u )
@@ -117,6 +136,8 @@ while getopts "u" opt; do
       ;;
   esac
 done
+
+customize_git
 
 make_dotfiles
 
@@ -128,3 +149,4 @@ exit;
 if [ ! -e ${PWD}/pwndbg ] || [ $update = "true" ]; then
     init_pwn_dbg
 fi
+
