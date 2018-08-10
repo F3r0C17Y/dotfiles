@@ -15,6 +15,33 @@ function progressBar()
     done
 }
 
+combine_dotfiles()
+{
+    local name=$1
+    cat "$PWD/config/${name}" > "${HOME}/.${name}"
+    cat "$PWD/config/custom/${name}" >> "${HOME}/.${name}"
+}
+
+make_dotfiles()
+{
+    echo "Make backups and create dotfiles"
+    mkdir -p $BACKUP
+    for file in $PWD/config/*
+    do
+        filename=$(basename $file)
+        if [ "$filename" != "$(basename $0)" ] && [ ! -d "${filename}" ] && [ -e $HOME/.$filename ]; then
+            mv -f $HOME/.$filename $BACKUP/
+        fi
+    done
+
+    combine_dotfiles bash_aliases 
+    combine_dotfiles direnvrc 
+    combine_dotfiles gitconfig 
+    combine_dotfiles tmux.conf 
+    combine_dotfiles vimrc
+}
+
+
 git_checkout()
 {
     DEST=$1
@@ -91,24 +118,7 @@ while getopts "u" opt; do
   esac
 done
 
-
-echo "Make backups and create dotfiles"
-mkdir -p $BACKUP
-for file in $PWD/*
-do
-    filename=$(basename $file)
-    if [ "$filename" != "$(basename $0)" ] && [ ! -d "${filename}" ]; then
-        mv -f $HOME/.$filename $BACKUP/
-        ln -sf $PWD/$filename $HOME/.$filename
-    fi
-done
-
-if [ ! -e $HOME/.vim ]; then
-    ln -sf $PWD/vim $HOME/.vim
-fi
-
-echo "Init git modules"
-
+make_dotfiles
 
 if [ ! -e ${PWD}/vim/autoload ] || [ $update = "true" ]; then
     init_vim_plugins
