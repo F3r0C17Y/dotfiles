@@ -7,7 +7,7 @@ update=false
 progress_steps=1
 
 
-function progressBar() 
+function progressBar()
 {
     local progressBar="#"
     for i in $(seq $progress_steps); do
@@ -54,10 +54,14 @@ make_dotfiles()
         fi
     done
 
-    combine_dotfiles bash_aliases 
-    combine_dotfiles direnvrc 
-    combine_dotfiles gitconfig 
-    combine_dotfiles tmux.conf 
+    if [ ! -e "~/.vim" ]; then
+        ln -s $PWD/vim ~/.vim
+    fi
+
+    combine_dotfiles bash_aliases
+    combine_dotfiles direnvrc
+    combine_dotfiles gitconfig
+    combine_dotfiles tmux.conf
     combine_dotfiles vimrc
 }
 
@@ -145,7 +149,6 @@ if [ ! -e ${PWD}/vim/autoload ] || [ $update = "true" ]; then
     init_vim_plugins
 fi
 
-exit;
 if [ ! -e ${PWD}/pwndbg ] || [ $update = "true" ]; then
     init_pwn_dbg
 fi
