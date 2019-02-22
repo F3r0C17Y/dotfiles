@@ -1,7 +1,7 @@
 /backup
 #git repos
 /vim
-/pwndbg
+/gefdbg
 /powerline
 # tmp files
 *.*~

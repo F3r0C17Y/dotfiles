@@ -113,13 +113,13 @@ init_vim_plugins()
     echo "]"
 }
 
-init_pwn_dbg()
+init_gef_dbg()
 {
-    echo "[*] init pwndbg"
-    git_checkout pwndbg https://github.com/pwndbg/pwndbg.git stable
-
-    pushd pwndbg
-    ./setup.sh
+    echo "[*] init gef dbg"
+    mkdir -p gefdbg
+    pushd gefdbg
+    wget -q -O "$(pwd)/gdbinit-gef.py" https://github.com/hugsy/gef/raw/master/gef.py
+    echo "source $(pwd)/gdbinit-gef.py" > "$HOME/.gdbinit"
     popd
 }
 
@@ -131,8 +131,13 @@ if [ ! -e "$PWD/setup.sh" ]; then
     exit -1
 fi
 
-while getopts "u" opt; do
+while getopts "ud" opt; do
   case ${opt} in
+    d )
+      sudo apt install cmake
+      #pip2 install capstone unicorn keystone-engine ropper
+      pip3 install capstone unicorn keystone-engine ropper
+      ;;
     u )
       update=true
       ;;
@@ -149,7 +154,7 @@ if [ ! -e ${PWD}/vim/autoload ] || [ $update = "true" ]; then
     init_vim_plugins
 fi
 
-if [ ! -e ${PWD}/pwndbg ] || [ $update = "true" ]; then
-    init_pwn_dbg
+if [ ! -e ${PWD}/gef ] || [ $update = "true" ]; then
+    init_gef_dbg
 fi
 
