@@ -58,6 +58,12 @@ make_dotfiles()
         ln -s $PWD/vim ~/.vim
     fi
 
+    if [ ! -d "$HOME/.config/nvim" ]; then
+        ln -s $HOME/.vim $HOME/.config/nvim
+        ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
+    fi
+
+
     combine_dotfiles bash_aliases
     combine_dotfiles direnvrc
     combine_dotfiles gitconfig
