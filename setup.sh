@@ -54,7 +54,7 @@ make_dotfiles()
         fi
     done
 
-    if [ ! -e "~/.vim" ]; then
+    if [ ! -d "$HOME/.vim" ]; then
         ln -s $PWD/vim ~/.vim
     fi
 
@@ -63,6 +63,10 @@ make_dotfiles()
     combine_dotfiles gitconfig
     combine_dotfiles tmux.conf
     combine_dotfiles vimrc
+    combine_dotfiles zshrc
+
+    sed -i "s#REPLACE_DIR_ME#$PWD/powerline/powerline#g" $HOME/.tmux.conf
+
 }
 
 
@@ -102,15 +106,23 @@ init_vim_plugins()
     git_checkout vim/bundle/vim-tagbar https://github.com/majutsushi/tagbar.git master
     git_checkout vim/bundle/vim-better-whitespace https://github.com/ntpeters/vim-better-whitespace.git master
     git_checkout powerline/fonts https://github.com/powerline/fonts.git master
+    git_checkout powerline/powerline https://github.com/powerline/powerline master
 
     if [ ! -e $PWD/vim/autoload/pathogen.vim ]; then
 	    ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim
     fi
 
-    pushd powerline/fonts/ > /dev/null
-    ./install.sh | progressBar
+
+    pushd $PWD/powerline/fonts/ > /dev/null
+    ./install.sh
     popd > /dev/null
     echo "]"
+}
+
+init_zsh()
+{
+    wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
 }
 
 init_gef_dbg()
@@ -134,7 +146,7 @@ fi
 while getopts "ud" opt; do
   case ${opt} in
     d )
-      sudo apt install cmake
+      sudo apt install cmake wget curl git zsh neovim ctags virtualenv virtualenvwrapper tmux tmuxinator powerline
       #pip2 install capstone unicorn keystone-engine ropper
       pip3 install capstone unicorn keystone-engine ropper
       ;;
@@ -156,5 +168,9 @@ fi
 
 if [ ! -e ${PWD}/gef ] || [ $update = "true" ]; then
     init_gef_dbg
+fi
+
+if [ ! -e $HOME/.oh-my-zsh ] || [ $update = "true" ]; then
+    init_zsh
 fi
 
