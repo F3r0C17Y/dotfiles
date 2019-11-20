@@ -105,3 +105,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias tmux='tmux -u'
 alias vim='nvim'
+
+eval "$(direnv hook $SHELL)"
+
