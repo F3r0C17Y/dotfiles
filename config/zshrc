@@ -102,6 +102,8 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 
+# 10ms for key sequences
+KEYTIMEOUT=1
 
 alias tmux='tmux -u'
 alias vim='nvim'
