@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ALACRITTY_PATH=$HOME/.config/alacritty/
+
+mkdir -p $ALACRITTY_PATH
+
+cp alacritty.yml $ALACRITTY_PATH
+
+
+

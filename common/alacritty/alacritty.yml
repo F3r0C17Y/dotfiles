@@ -1,0 +1,169 @@
+
+env:
+    #TERM: alacritty
+    TERM: xterm-256color
+
+window:
+  dynamic_padding: false
+  decorations: none
+  startup_mode: Maximized
+  #startup_mode: Fullscreen
+  
+  #title: Alacritty
+  # Allow terminal applications to change Alacritty's window title.
+  #dynamic_title: true
+
+scrolling:
+  history: 10000
+
+  # Scrolling distance multiplier.
+  #multiplier: 3
+
+font:
+  normal:
+    family: Fira Mono for Powerline
+    style: Regular
+
+  bold:
+    family: Fira Mono for Powerline
+    style: Bold
+
+  italic:
+    family: Fira Mono for Powerline
+    style: Medium
+
+  size: 12.0
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+draw_bold_text_with_bright_colors: false
+
+schemes:
+  panda: &panda
+    primary:
+      background: '#292A2B'
+      foreground: '#E6E6E6'
+
+    normal:
+      black:   '#292A2B'
+      red:     '#FF2C6D'
+      green:   '#19f9d8'
+      yellow:  '#FFB86C'
+      blue:    '#45A9F9'
+      magenta: '#FF75B5'
+      cyan:    '#67d3c2'
+      orange:  '#B084EB'
+      white:   '#E6E6E6'
+    bright:
+      black:   '#292A2B'
+      red:     '#FF2C6D'
+      green:   '#19f9d8'
+      yellow:  '#ffcc95'
+      blue:    '#6FC1FF'
+      magenta: '#FF9AC1'
+      cyan:    '#67d3c2'
+      white:   '#ffffff'  
+xterm: &xterm
+    normal:
+      black:   '#000000'
+      red:     '#cd0000'
+      green:   '#00cd00'
+      yellow:  '#cdcd00'
+      blue:    '#0000ee'
+      magenta: '#cd00cd'
+      cyan:    '#00cdcd'
+      white:   '#e5e5e5'
+    bright:
+      black:   '#7f7f7f'
+      red:     '#ff0000'
+      green:   '#00ff00'
+      yellow:  '#ffff00'
+      blue:    '#5c5cff'
+      magenta: '#ff00ff'
+      cyan:    '#00ffff'
+      white:   '#ffffff'
+
+colors: *panda
+
+indexed_colors: []
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '#ffffff'
+
+
+background_opacity: 0.6
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: false
+
+cursor:
+  style:
+    shape: Block
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: Off
+
+  vi_mode_style: None
+
+  unfocused_hollow: true
+  thickness: 0.15
+
+# Live config reload (changes require restart)
+live_config_reload: false
+
+# Send ESC (\x1b) before characters when alt is pressed.
+#alt_send_esc: true
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  hide_when_typing: true 
+
+  #url:
+    # URL launcher
+    #
+    # This program is executed when clicking on a text which is recognized as a
+    # URL. The URL is always added to the command as the last parameter.
+    #
+    # When set to `launcher: None`, URL launching will be disabled completely.
+    #
+    # Default:
+    #   - (macOS) open
+    #   - (Linux/BSD) xdg-open
+    #   - (Windows) explorer
+    #launcher:
+    #  program: xdg-open
+    #  args: []
+
+    # URL modifiers
+    #
+    # These are the modifiers that need to be held down for opening URLs when
+    # clicking on them. The available modifiers are documented in the key
+    # binding section.
+    #modifiers: None
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: Warn
+  print_events: false
