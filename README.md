@@ -87,3 +87,10 @@ layout_python-venv() {
 }
 ```
 
+
+# Rust tools
+
+```
+cargo install alacritty
+```
+
