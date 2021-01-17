@@ -107,8 +107,25 @@ source $ZSH/oh-my-zsh.sh
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+[ -d "$HOME/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin/:${PATH}"
+[ -d "$HOME/dotfiles/scripts" ] && export PATH="${HOME}/dotfiles/scripts/:${PATH}"
+
 alias tmux='tmux -u'
 alias vim='nvim'
+
+if type exa 2>&1 >/dev/null; then
+  alias ls='exa'
+  alias l='exa --group-directories-first --git'
+  alias ll='exa -l --group-directories-first --git'
+  alias la='exa -la --group-directories-first --git'
+  alias lt='exa -T --git-ignore --level=2 --group-directories-first'
+  alias llt='exa -lT --git-ignore --level=2 --group-directories-first'
+  alias lT='exa -T --git-ignore --level=4 --group-directories-first'
+else
+  alias l='ls -lah --group-directories-first'
+  alias ll='ls -alF --group-directories-first'
+  alias la='ls -A --group-directories-first'
+fi
 
 eval "$(direnv hook $SHELL)"
 
@@ -117,3 +134,4 @@ powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
 #. /usr/share/powerline/bindings/zsh/powerline.zsh
+

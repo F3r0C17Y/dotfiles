@@ -98,6 +98,7 @@ pacman -S powerline
 
 ```
 cargo install alacritty
+cargo install exa
 ```
 
 
