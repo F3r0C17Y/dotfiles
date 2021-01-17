@@ -113,7 +113,7 @@ alias vim='nvim'
 eval "$(direnv hook $SHELL)"
 
 powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
 
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#. /usr/share/powerline/bindings/zsh/powerline.zsh
