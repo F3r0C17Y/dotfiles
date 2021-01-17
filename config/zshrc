@@ -129,6 +129,9 @@ fi
 
 eval "$(direnv hook $SHELL)"
 
+eval "$(starship init zsh)"
+
+
 powerline-daemon -q
 
 #POWERLINE_BASH_CONTINUATION=1

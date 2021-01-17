@@ -99,8 +99,8 @@ pacman -S powerline
 ```
 cargo install alacritty
 cargo install exa
+cargo install bandwhich
+cargo install ripgrep
+cargo install starship
 ```
-
-
-
 
