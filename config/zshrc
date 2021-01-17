@@ -70,7 +70,9 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras tmux extract docker virtualenv colorize command-not-found cp gpg-agent profiles)
+plugins=()
+#plugins=(tmux extract docker virtualenv colorize command-not-found cp gpg-agent profiles)
+#plugins=(git git-extras tmux extract docker virtualenv colorize command-not-found cp gpg-agent profiles)
 
 ZSH_TMUX_AUTOSTART=true
 
