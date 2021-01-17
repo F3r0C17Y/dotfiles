@@ -87,10 +87,19 @@ layout_python-venv() {
 }
 ```
 
+# Powerline
+
+```
+pacman -S powerline
+```
+
 
 # Rust tools
 
 ```
 cargo install alacritty
 ```
+
+
+
 
