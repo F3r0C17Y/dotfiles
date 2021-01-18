@@ -1,0 +1,6 @@
+#!/bin/sh
+
+gpg-connect-agent updatestartuptty /bye > /dev/null
+if [[ $? = 0 ]]; then
+    echo "[*] gpg agent reconnected to current tty"
+fi
