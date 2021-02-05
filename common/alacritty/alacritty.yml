@@ -5,10 +5,10 @@ env:
 
 window:
   dynamic_padding: false
-  decorations: none
-  startup_mode: Maximized
+  decorations: full #none
+  startup_mode: Windowed
   #startup_mode: Fullscreen
-  
+
   #title: Alacritty
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
