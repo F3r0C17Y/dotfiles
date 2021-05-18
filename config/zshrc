@@ -76,6 +76,8 @@ plugins=(tmux gpg-agent colorize virtualenv docker command-not-found)
 
 #ZSH_TMUX_AUTOSTART=true
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#993399,bold,underline"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
