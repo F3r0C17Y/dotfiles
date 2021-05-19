@@ -104,3 +104,8 @@ cargo install ripgrep
 cargo install starship
 ```
 
+
+
+https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions.git 
+https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting.git 
+
