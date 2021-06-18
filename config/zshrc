@@ -108,9 +108,10 @@ alias vim='nvim'
 
 if type exa 2>&1 >/dev/null; then
   alias ls='exa'
-  alias l='exa --group-directories-first --git'
-  alias ll='exa -lg --group-directories-first --git'
-  alias la='exa -lag --group-directories-first --git'
+  alias l='exa --group-directories-first'
+  alias ll='exa -lg --group-directories-first'
+  alias lg='exa -lg --group-directories-first --git'
+  alias la='exa -lag --group-directories-first'
   alias lt='exa -Tg --git-ignore --level=2 --group-directories-first'
   alias llt='exa -lgT --git-ignore --level=2 --group-directories-first'
   alias lT='exa -Tg --git-ignore --level=4 --group-directories-first'
