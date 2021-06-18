@@ -16,8 +16,6 @@ ssh_only = false
 format =  "@[$hostname](bold red):"
 trim_at = ""
 disabled = false
-show_always = true
-
 
 [directory]
 style = "bold blue"
