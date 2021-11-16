@@ -93,6 +93,15 @@ layout_python-venv() {
 pacman -S powerline
 ```
 
+# ALE Vim Plugin
+
+```bash
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+
+ninja -t compdb > compile_commands.json
+```
+
+
 
 # Rust tools
 
