@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 gpg-connect-agent updatestartuptty /bye > /dev/null
 if [[ $? = 0 ]]; then
