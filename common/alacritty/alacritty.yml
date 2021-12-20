@@ -68,7 +68,7 @@ schemes:
       blue:    '#6FC1FF'
       magenta: '#FF9AC1'
       cyan:    '#67d3c2'
-      white:   '#ffffff'  
+      white:   '#ffffff'
 xterm: &xterm
     normal:
       black:   '#000000'
@@ -99,7 +99,7 @@ bell:
   color: '#ffffff'
 
 
-background_opacity: 0.6
+background_opacity: 1.0
 
 selection:
   # This string contains all characters that are used as separators for
@@ -133,7 +133,7 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
-  hide_when_typing: true 
+  hide_when_typing: true
 
   #url:
     # URL launcher
