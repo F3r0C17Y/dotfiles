@@ -15,9 +15,9 @@ chsh YOURUSER /bin/zsh
 ```
 
 # GPG Support
-cp gnupg/* $HOME/.gnupg/
+`cp gnupg/* $HOME/.gnupg/`
 
-add to shell
+Add the following lines at end of your `/etc/profile` not .bashrc or .zshrc!
 ```
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
@@ -25,8 +25,9 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 ```
 
 This should print all smartcards:
+```
 gpg --card-status
-
+```
 
 # ipython powerline
 
