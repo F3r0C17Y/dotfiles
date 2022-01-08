@@ -1,6 +1,7 @@
 /backup
 #git repos
 /vim
+/tmux
 /gefdbg
 /powerline
 # tmp files

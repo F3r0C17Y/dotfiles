@@ -131,6 +131,15 @@ init_vim_plugins()
     echo "]"
 }
 
+init_tmux_plugins()
+{
+    echo -ne "[*] init tmux plugins ["
+    progress_steps=$(expr 80 / 1)
+    mkdir -p ${PWD}/tmux/plugins
+    git_checkout tmux/plugins/tpm https://github.com/tmux-plugins/tpm master
+    echo "]"
+}
+
 init_zsh()
 {
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
@@ -177,6 +186,11 @@ make_dotfiles
 if [ ! -e ${PWD}/vim/autoload ] || [ $update = "true" ]; then
     init_vim_plugins
 fi
+
+if [ ! -e ${PWD}/tmux ] || [ $update = "true" ]; then
+    init_tmux_plugins
+fi
+
 
 if [ ! -e ${PWD}/gef ] || [ $update = "true" ]; then
     init_gef_dbg
