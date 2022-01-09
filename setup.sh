@@ -167,7 +167,7 @@ fi
 while getopts "ud" opt; do
   case ${opt} in
     d )
-      sudo apt install cmake wget curl git zsh neovim ctags virtualenv virtualenvwrapper tmux tmuxinator powerline scdaemon
+      sudo apt install cmake wget curl git zsh neovim ctags virtualenv virtualenvwrapper tmux tmuxinator powerline scdaemon xclip
       #pip2 install capstone unicorn keystone-engine ropper
       pip3 install capstone unicorn keystone-engine ropper
       ;;
