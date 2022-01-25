@@ -8,6 +8,7 @@ window:
   decorations: full #none
   startup_mode: Windowed
   #startup_mode: Fullscreen
+  opacity: 1.0
 
   #title: Alacritty
   # Allow terminal applications to change Alacritty's window title.
@@ -99,7 +100,6 @@ bell:
   color: '#ffffff'
 
 
-background_opacity: 1.0
 
 selection:
   # This string contains all characters that are used as separators for
