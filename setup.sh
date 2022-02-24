@@ -122,6 +122,7 @@ init_vim_plugins()
     git_checkout vim/bundle/vim-tagbar https://github.com/majutsushi/tagbar.git master
     git_checkout vim/bundle/vim-better-whitespace https://github.com/ntpeters/vim-better-whitespace.git master
     git_checkout vim/bundle/ale https://github.com/dense-analysis/ale.git master
+    git_checkout vim/bundle/rust.vim https://github.com/rust-lang/rust.vim master
     git_checkout powerline/fonts https://github.com/powerline/fonts.git master
     git_checkout powerline/powerline https://github.com/powerline/powerline master
 
