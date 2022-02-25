@@ -1,0 +1,3 @@
+
+
+ln -s ~/.config/nvim/coc-settings.json coc-settings.json

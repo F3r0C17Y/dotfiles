@@ -11,7 +11,7 @@ let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠️'
-let g:ale_linters = { 
+let g:ale_linters = {
 \   'python': ['pyls'],
 \   'c': ['clang'],
 \   'rust': ['rustc', 'rls']
@@ -38,8 +38,10 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
     "----------------------- Project and Code navigation ----------------------"
     Plug 'preservim/tagbar'
-    
-    "------------------------- Theme and colorschemes -------------------------"
+    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'kyazdani42/nvim-web-devicons'   " file icons
+
+    "------------------------- Gurzr naq pbybefpurzrf -------------------------"
     Plug 'vim-airline/vim-airline'            " status and tabline
     Plug 'vim-airline/vim-airline-themes'
     Plug 'flazz/vim-colorschemes'
@@ -49,20 +51,20 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "------------------------------- Git --------------------------------------"
     Plug 'tpope/vim-fugitive'       " Git support
     Plug 'airblade/vim-gitgutter'   " Git diff
-    
+
     "-------------------------- Language Support ------------------------------"
     Plug 'dense-analysis/ale'                " linter
     Plug 'neoclide/coc.nvim', {'branch': 'release'}   " auto completion
-    
+
     "------------------------------- Rust -------------------------------------"
     Plug 'rust-lang/rust.vim'                 " Rust syntax highlighting
     Plug 'cespare/vim-toml'                   " toml file syntax highlighting
-    
+
     "------------------------------- Helper -----------------------------------"
     Plug 'tpope/vim-commentary'               " Comment helper
     Plug 'ntpeters/vim-better-whitespace'     " Display whitespaces
     Plug 'jiangmiao/auto-pairs'
- 
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,7 +102,7 @@ set nowritebackup   " disable if you want backups while writing
 set noswapfile 	    " no swap files
 
 set hlsearch        " enable highlight search
-set termguicolors   
+set termguicolors
 
 "set wildmenu
 "set showcmd
@@ -215,14 +217,14 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#cor#enabled = 1
 let g:airline_powerline_fonts=1
-let g:airline_theme='monokain'
+let g:airline_theme='badwolf'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_symbols.space = "\ua0"
+let g:airline_symbols.spacer= "\ua0"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -366,3 +368,64 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nvim Tree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
+let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
+let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
+let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
+let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
+let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
+let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
+let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
+let g:nvim_tree_respect_buf_cwd = 1 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
+let g:nvim_tree_create_in_closed_folder = 1 "0 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
+let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
+let g:nvim_tree_show_icons = {
+    \ 'git': 1,
+    \ 'folders': 0,
+    \ 'files': 0,
+    \ 'folder_arrows': 0,
+    \ }
+"If 0, do not show the icons for one of 'git' 'folder' and 'files'
+"1 by default, notice that if 'files' is 1, it will only display
+"if nvim-web-devicons is installed and on your runtimepath.
+"if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
+"but this will not work when you set indent_markers (because of UI conflict)
+
+" default will show icon by default if no icon is provided
+" default shows no icon by default
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \   },
+    \ 'folder': {
+    \   'arrow_open': "",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \   }
+    \ }
+
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+" NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
+
+" a list of groups can be found at `:help nvim_tree_highlight`
+highlight NvimTreeFolderIcon guibg=blue
