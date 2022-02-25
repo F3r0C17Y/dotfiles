@@ -99,32 +99,6 @@ git_checkout()
     ) | progressBar
 }
 
-init_vim_plugins()
-{
-    echo -ne "[*] init vim plugins ["
-    progress_steps=$(expr 80 / 11)
-    mkdir -p ${PWD}/vim/autoload
-    mkdir -p ${PWD}/vim/bundle
-    git_checkout vim/autoload/vim-pathogen https://github.com/tpope/vim-pathogen.git master
-    git_checkout vim/bundle/nerdtree https://github.com/scrooloose/nerdtree.git master
-    git_checkout vim/bundle/vim-airline https://github.com/bling/vim-airline.git master
-    git_checkout vim/bundle/vim-airline-themes https://github.com/vim-airline/vim-airline-themes master
-    git_checkout vim/bundle/vim-fugitive https://github.com/tpope/vim-fugitive.git master
-    git_checkout vim/bundle/vim-bufferline https://github.com/bling/vim-bufferline.git master
-    git_checkout vim/bundle/cscope-maps https://github.com/joe-skb7/cscope-maps.git master
-    git_checkout vim/bundle/vim-tagbar https://github.com/majutsushi/tagbar.git master
-    git_checkout vim/bundle/vim-better-whitespace https://github.com/ntpeters/vim-better-whitespace.git master
-    git_checkout vim/bundle/ale https://github.com/dense-analysis/ale.git master
-    git_checkout vim/bundle/rust.vim https://github.com/rust-lang/rust.vim master
-    git_checkout powerline/fonts https://github.com/powerline/fonts.git master
-    git_checkout powerline/powerline https://github.com/powerline/powerline master
-
-    pushd $PWD/powerline/fonts/ > /dev/null
-    ./install.sh
-    popd > /dev/null
-    echo "]"
-}
-
 init_tmux_plugins()
 {
     echo -ne "[*] init tmux plugins ["

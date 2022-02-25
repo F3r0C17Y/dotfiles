@@ -45,7 +45,7 @@ if sys.version_info >= (3, 0):
     c.TerminalInteractiveShell.prompts_class = PowerlinePrompts
 ```
 
-# Tmux is not activated per default, add tmux line into .bashrc 
+# Tmux is not activated per default, add tmux line into .bashrc
 ```
 case $- in
     *i*)
@@ -102,6 +102,25 @@ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
 ninja -t compdb > compile_commands.json
 ```
 
+# COC Vim Plugin
+
+Enter `:CocConfig`
+```bash
+{
+    "diagnostic.displayByAle": true
+}
+```
+
+Install plugins
+
+```
+:CocInstall coc-json
+:CocInstall coc-clangd
+:CocInstall coc-rls
+:CocInstall coc-yaml
+:CocInstall coc-html
+:CocInstall coc-eslint
+```
 
 
 # Rust tools
@@ -116,6 +135,5 @@ cargo install starship
 
 
 
-https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions.git 
-https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting.git 
-
+https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions.git
+https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting.git
