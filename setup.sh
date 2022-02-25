@@ -54,24 +54,18 @@ make_dotfiles()
         fi
     done
 
-    if [ ! -d "$HOME/.vim" ]; then
-        ln -s $PWD/vim ~/.vim
-    fi
-
     if [ ! -d "$HOME/.tmux" ]; then
         ln -s $PWD/tmux ~/.tmux
     fi
 
-
     if [ ! -d "$HOME/.config/nvim" ]; then
-        ln -s $HOME/.vim $HOME/.config/nvim
+	mkdir -p $HOME/.config/nvim
         ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
     fi
 
     if [ ! -e "$HOME/.config/nvim/init.vim" ]; then
         ln -sf $HOME/.vimrc $HOME/.config/nvim/init.vim
     fi
-
 
 
     combine_dotfiles bash_aliases
@@ -84,7 +78,6 @@ make_dotfiles()
     sed -i "s#REPLACE_DIR_ME#$PWD/powerline/powerline#g" $HOME/.tmux.conf
 
 }
-
 
 git_checkout()
 {
@@ -125,11 +118,6 @@ init_vim_plugins()
     git_checkout vim/bundle/rust.vim https://github.com/rust-lang/rust.vim master
     git_checkout powerline/fonts https://github.com/powerline/fonts.git master
     git_checkout powerline/powerline https://github.com/powerline/powerline master
-
-    if [ ! -e $PWD/vim/autoload/pathogen.vim ]; then
-	    ln -sf $PWD/vim/autoload/vim-pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim
-    fi
-
 
     pushd $PWD/powerline/fonts/ > /dev/null
     ./install.sh
@@ -189,10 +177,6 @@ customize_git
 
 make_dotfiles
 
-if [ ! -e ${PWD}/vim/autoload ] || [ $update = "true" ]; then
-    init_vim_plugins
-fi
-
 if [ ! -e ${PWD}/tmux ] || [ $update = "true" ]; then
     init_tmux_plugins
 fi
@@ -205,4 +189,3 @@ fi
 if [ ! -e $HOME/.oh-my-zsh ] || [ $update = "true" ]; then
     init_zsh
 fi
-
