@@ -39,7 +39,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
     "----------------------- Project and Code navigation ----------------------"
     Plug 'preservim/tagbar'
-    Plug 'kyazdani42/nvim-tree.lua', {'tag': '1.6.7'}
+    Plug 'kyazdani42/nvim-tree.lua', {'tag': 'nightly'}
     Plug 'kyazdani42/nvim-web-devicons'   " file icons
 
     "------------------------- Gurzr naq pbybefpurzrf -------------------------"
@@ -380,7 +380,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nvim Tree
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua require'nvim-tree'.setup {  }
+
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
@@ -429,6 +430,3 @@ let g:nvim_tree_icons = {
     \   'symlink_open': "",
     \   }
     \ }
-
-" setup
-lua require'nvim-tree'.setup {}
