@@ -16,8 +16,6 @@ fi
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# direnv hook
-#eval "$(direnv hook bash)"
 
 # start gedit independent from shell
 g()
