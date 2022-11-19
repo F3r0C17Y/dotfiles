@@ -1,0 +1,5 @@
+exclude_paths:
+    - ansible/playbooks/tasks
+skip_list:
+    # Do not require FQCN for builtin actions
+    - fqcn-builtins

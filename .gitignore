@@ -1,7 +1,7 @@
 /backup
 #git repos
 /vim
-/tmux
+/old/tmux
 /gefdbg
 /powerline
 # tmp files
@@ -9,4 +9,4 @@
 *~
 *.swp
 *.*bak
-/config/custom/*
+/old/config/custom/*
