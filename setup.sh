@@ -68,6 +68,7 @@ make_dotfiles()
     fi
 
 
+    combine_dotfiles bashrc
     combine_dotfiles bash_aliases
     combine_dotfiles direnvrc
     combine_dotfiles gitconfig
