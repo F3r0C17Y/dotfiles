@@ -1,0 +1,23 @@
+---
+
+- name: Install base packages
+  become: true
+  become_user: root
+  pacman:
+    name:
+      - cmake
+      - wget
+      - curl
+      - git
+      - zsh
+      - neovim
+      - ctags
+      - python-virtualenv
+      - python-virtualenvwrapper
+      - tmux
+      - powerline
+      - pcsc-tools
+      - xclip
+      - wl-clipboard
+      - starship
+    state: present

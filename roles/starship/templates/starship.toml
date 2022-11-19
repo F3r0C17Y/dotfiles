@@ -1,8 +1,6 @@
-
 scan_timeout = 20
 
 add_newline = false
-
 
 [username]
 disabled = false
@@ -33,7 +31,6 @@ disabled = true
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
 format = " took [$duration]($style)"
-
 
 [rust]
 format = "via [⚙️ $version](cyan bold)"
