@@ -1,0 +1,20 @@
+---
+
+- name: Check if zshrc backup exists
+  stat:
+    path: $HOME/.zshrc.orig
+  register: zshrc_result
+
+- name: Backup .zshrc
+  copy:
+    src: "~/.zshrc"
+    dest: "~/.zshrc.orig"
+  when: not zshrc_result.stat.exists
+
+
+- name: Configure zsh
+  become: no
+  template:
+    src: templates/zshrc
+    dest: $HOME/.zshrc
+    mode: '644'

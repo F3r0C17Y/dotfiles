@@ -1,4 +1,3 @@
-
 if type exa 2>/dev/null; then
   alias ls='exa'
   alias l='exa -l --all --group-directories-first --git'
@@ -15,19 +14,6 @@ fi
 # cd shorts
 alias ..='cd ..'
 alias ...='cd ../..'
-
-
-# start gedit independent from shell
-g()
-{
-(pluma $* &)
-}
-
-# qtcreator starts'n'open a cmake project directly
-qt()
-{
-(qtcreator CMakeLists.txt &)
-}
 
 jj() {
 	command journalctl --no-pager $@ | ccze -A | less -R

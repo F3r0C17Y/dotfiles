@@ -20,4 +20,6 @@
       - xclip
       - wl-clipboard
       - starship
+      - ccze
+      - jq
     state: present
