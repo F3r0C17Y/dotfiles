@@ -1,0 +1,15 @@
+---
+
+- include: arch.yml
+  when: ansible_os_family == 'Archlinux'
+
+- include: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install debugger python packages
+  ansible.builtin.pip:
+    name:
+      - capstone
+      - unicorn
+      - keystone-engine
+      - ropper

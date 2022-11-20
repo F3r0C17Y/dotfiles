@@ -1,0 +1,25 @@
+if type exa 2>&1 >/dev/null; then
+  alias ls='exa'
+  alias l='exa --group-directories-first'
+  alias ll='exa -lg --group-directories-first'
+  alias lg='exa -lg --group-directories-first --git'
+  alias la='exa -lag --group-directories-first'
+  alias lt='exa -Tg --git-ignore --level=2 --group-directories-first'
+  alias llt='exa -lgT --git-ignore --level=2 --group-directories-first'
+  alias lT='exa -Tg --git-ignore --level=4 --group-directories-first'
+else
+  alias l='ls -lah --group-directories-first'
+  alias ll='ls -alF --group-directories-first'
+  alias la='ls -A --group-directories-first'
+fi
+
+alias tmux='tmux -u'
+alias vim='nvim'
+
+# cd shorts
+alias ..='cd ..'
+alias ...='cd ../..'
+
+jj() {
+	command journalctl --no-pager $@ | ccze -A | less -R
+}

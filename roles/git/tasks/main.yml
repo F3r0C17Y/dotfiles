@@ -1,0 +1,8 @@
+---
+
+- name: Configure git
+  become: no
+  template:
+    src: templates/gitconfig
+    dest: $HOME/.gitconfig
+    mode: '644'

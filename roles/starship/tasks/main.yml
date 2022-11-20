@@ -1,0 +1,8 @@
+---
+
+- name: Configure starship
+  become: no
+  template:
+    src: templates/starship.toml
+    dest: $HOME/.config/starship.toml
+    mode: '644'

@@ -1,0 +1,27 @@
+---
+
+- name: Touch gdbinit
+  file:
+    path: $HOME/.gdbinit
+    state: touch
+    mode: '644'
+    modification_time: preserve
+    access_time: preserve
+
+- name: Check if gef hook is present
+  lineinfile:
+    state: absent
+    path: "$HOME/.gdbinit"
+    regexp: "gef.py"
+  check_mode: true
+  changed_when: false
+  register: check
+
+# TODO for ubuntu/debian checkout the file from git
+# https://github.com/hugsy/gef/raw/master/gef.py
+- name: Add gef hook
+  lineinfile:
+    state: present
+    path: "$HOME/.gdbinit"
+    line: "source /usr/share/gef/gef.py"
+  when: check.found is not defined or check.found == 0

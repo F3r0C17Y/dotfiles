@@ -1,0 +1,8 @@
+---
+
+- name: Upgrade arch system
+  become: true
+  become_user: root
+  pacman:
+    update_cache: true
+    upgrade: true

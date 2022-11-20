@@ -1,0 +1,16 @@
+---
+
+- name: Install dev packages
+  become: true
+  become_user: root
+  pacman:
+    name:
+      - brave-browser
+      - alacritty
+      - gdb
+      - gef
+      - peda
+      - direnv
+      - ripgrep
+      - nodejs
+      - npm

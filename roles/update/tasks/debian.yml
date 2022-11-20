@@ -1,0 +1,16 @@
+---
+
+- name: Update apt repo and cache on all Debian/Ubuntu boxes
+  become: true
+  become_user: root
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+    cache_valid_time: 3599
+
+- name: Upgrade all packages
+  become: true
+  become_user: root
+  apt:
+    upgrade: dist
+    force_apt_get: yes
