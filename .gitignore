@@ -1,15 +1,7 @@
-/backup
-#git repos
-/vim
-/old/tmux
-/gefdbg
-/powerline
-# tmp files
 *.*~
 *~
 *.swp
 *.*bak
-/old/config/custom/*
 
 
 /.idea
