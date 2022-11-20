@@ -13,3 +13,4 @@
     - git
     - direnv
     - gnupg
+    - gdb

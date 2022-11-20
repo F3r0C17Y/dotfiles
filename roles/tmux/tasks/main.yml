@@ -6,3 +6,14 @@
     src: templates/tmux.conf
     dest: $HOME/.tmux.conf
     mode: '644'
+
+- name: Create tmux plugin dir
+  file:
+    path: $HOME/.tmux/plugins
+    state: directory
+
+- name: Git checkout
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: $HOME/.tmux/plugins/tpm
+    version: b699a7e

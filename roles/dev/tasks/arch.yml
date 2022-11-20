@@ -13,3 +13,4 @@
       - direnv
       - ripgrep
       - nodejs
+      - npm

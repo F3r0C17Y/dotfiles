@@ -42,20 +42,6 @@ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
 ninja -t compdb > compile_commands.json
 ```
 
-# COC Vim Plugin
-
-Install plugins
-
-```
-:CocInstall coc-json
-:CocInstall coc-clangd
-:CocInstall coc-rls
-:CocInstall coc-yaml
-:CocInstall coc-html
-:CocInstall coc-eslint
-```
-
-
 # Rust tools
 
 ```

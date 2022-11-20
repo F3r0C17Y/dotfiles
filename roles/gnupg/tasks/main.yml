@@ -1,0 +1,21 @@
+---
+
+- name: Create gnupg dir
+  file:
+    path: $HOME/.gnupg
+    state: directory
+    mode: '700'
+
+- name: Configure gpg
+  become: no
+  template:
+    src: templates/gpg.conf
+    dest: $HOME/.gnupg/gpg.conf
+    mode: '644'
+
+- name: Configure gpg-agent
+  become: no
+  template:
+    src: templates/gpg-agent.conf
+    dest: $HOME/.gnupg/gpg-agent.conf
+    mode: '644'
