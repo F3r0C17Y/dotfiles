@@ -11,10 +11,34 @@
     dest: "~/.zshrc.orig"
   when: not zshrc_result.stat.exists
 
-
 - name: Configure zsh
   become: no
   template:
-    src: templates/zshrc
+    src: templates/zshrc.j2
     dest: $HOME/.zshrc
+    mode: '644'
+
+- name: Check if bashrc backup exists
+  stat:
+    path: $HOME/.bashrc.orig
+  register: bashrc_result
+
+- name: Backup .bashrc
+  copy:
+    src: "~/.bashrc"
+    dest: "~/.bashrc.orig"
+  when: not bashrc_result.stat.exists
+
+- name: Configure bash
+  become: no
+  template:
+    src: templates/bashrc
+    dest: $HOME/.bashrc
+    mode: '644'
+
+- name: Configure bash_aliases
+  become: no
+  template:
+    src: templates/bash_aliases
+    dest: $HOME/.bash_aliases
     mode: '644'
