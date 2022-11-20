@@ -42,3 +42,16 @@ ninja -t compdb > compile_commands.json
 ```shell
 gpg --card-status
 ```
+
+
+## Rust Modules
+
+```shell
+cargo install cargo-audit cargo-update
+cargo install exa bandwhich
+```
+
+Keep installed binaries up-to-date
+```shell
+cargo install-update -a
+```

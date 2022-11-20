@@ -56,6 +56,8 @@ xterm*|rxvt*)
     ;;
 esac
 
+[ -d "$HOME/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin/:${PATH}"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -76,8 +78,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-. "$HOME/.cargo/env"
 
 eval "$(direnv hook /bin/bash)"
 

@@ -14,3 +14,8 @@
       - ripgrep
       - nodejs
       - npm
+      - rustup
+      - cargo
+      - rustfmt
+      - rust-analyzer
+      - pkgconf
