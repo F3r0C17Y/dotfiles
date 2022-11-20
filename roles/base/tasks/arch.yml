@@ -22,4 +22,7 @@
       - starship
       - ccze
       - jq
+      - powerline
+      - awesome-terminal-fonts
+      - powerline-fonts
     state: present

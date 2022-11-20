@@ -1,0 +1,26 @@
+---
+
+- name: Configure vim
+  become: no
+  template:
+    src: templates/vimrc
+    dest: $HOME/.vimrc
+    mode: '644'
+
+- name: Create nvim dir
+  file:
+    path: $HOME/.config/nvim
+    state: directory
+
+- name: Create a symbolic link for nvim
+  file:
+    src: $HOME/.vimrc
+    dest: $HOME/.config/nvim/init.vim
+    state: link
+
+- name: Configure coc for nvim
+  become: no
+  template:
+    src: templates/coc-settings.json
+    dest: $HOME/.config/nvim/coc-settings.json
+    mode: '644'

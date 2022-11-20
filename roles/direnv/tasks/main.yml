@@ -1,0 +1,8 @@
+---
+
+- name: Configure direnv
+  become: no
+  template:
+    src: templates/direnvrc
+    dest: $HOME/.direnvrc
+    mode: '644'

@@ -11,6 +11,9 @@
     dest: "~/.zshrc.orig"
   when: not zshrc_result.stat.exists
 
+# TODO for debian/linux install oh my zsh
+# wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
 - name: Configure zsh
   become: no
   template:

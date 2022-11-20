@@ -12,3 +12,4 @@
       - peda
       - direnv
       - ripgrep
+      - nodejs

@@ -1,0 +1,8 @@
+---
+
+- name: Configure tmux
+  become: no
+  template:
+    src: templates/tmux.conf
+    dest: $HOME/.tmux.conf
+    mode: '644'
