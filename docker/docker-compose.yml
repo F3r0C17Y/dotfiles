@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  # Arch image
+  arch-testing:
+    build:
+      context: ./arch
+      args:
+        PUB_KEY: ${PUB_KEY}
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.2
+  # Ubuntu image
+  ubuntu-testing:
+    build:
+      context: ./ubuntu
+      args:
+        PUB_KEY: ${PUB_KEY}
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.3
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
