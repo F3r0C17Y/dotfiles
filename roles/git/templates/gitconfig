@@ -16,7 +16,7 @@
 	meta = blue black bold
 [core]
 	pager = less -F -X
-	editor = vim
+	editor = nvim
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
