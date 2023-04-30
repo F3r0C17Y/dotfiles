@@ -20,3 +20,4 @@
       - rust-analyzer
       - pkgconf
       - python-setuptools
+      - python-poetry
