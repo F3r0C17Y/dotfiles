@@ -6,6 +6,15 @@
   pacman:
     name:
       - pwncat-caleb
+      - burpsuite
+      - postgresql
+      - metasploit
+      - metasploit-autopwn
+      - msfenum
+      - ps1encode
+
+# TODO issue db init command
+# msfdb init
 
 - name: pwncat
   become: true
