@@ -12,9 +12,13 @@
       - metasploit-autopwn
       - msfenum
       - ps1encode
+      - nmap
+      - hydra
+      - wordlistctl
 
 # TODO issue db init command
 # msfdb init
+# wordlistctl fetch
 
 - name: pwncat
   become: true
