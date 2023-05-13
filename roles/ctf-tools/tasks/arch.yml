@@ -15,7 +15,12 @@
       - nmap
       - hydra
       - wordlistctl
-
+      - gobuster
+      - ffuf
+      - feroxbuster
+      - jython
+      - traceroute
+      - masscan
 # TODO issue db init command
 # msfdb init
 # wordlistctl fetch
