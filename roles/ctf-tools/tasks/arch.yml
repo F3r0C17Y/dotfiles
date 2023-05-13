@@ -5,6 +5,8 @@
   become_user: root
   pacman:
     name:
+      - redis
+      - mongodb
       - pwncat-caleb
       - burpsuite
       - postgresql
