@@ -16,6 +16,8 @@
       - ps1encode
       - nmap
       - hydra
+      - crunch
+      - john
       - wordlistctl
       - gobuster
       - ffuf
@@ -23,6 +25,8 @@
       - jython
       - traceroute
       - masscan
+      - exploitdb
+      - recon-ng
 # TODO issue db init command
 # msfdb init
 # wordlistctl fetch
