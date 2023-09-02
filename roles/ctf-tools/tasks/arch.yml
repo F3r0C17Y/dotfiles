@@ -5,6 +5,7 @@
   become_user: root
   pacman:
     name:
+      - make
       - redis
       - mongodb
       - pwncat-caleb
@@ -16,6 +17,7 @@
       - ps1encode
       - nmap
       - hydra
+      - cewl
       - crunch
       - john
       - wordlistctl
@@ -27,6 +29,9 @@
       - masscan
       - exploitdb
       - recon-ng
+      - tcpdump
+      - sqlmap
+      - wireshark-qt
 # TODO issue db init command
 # msfdb init
 # wordlistctl fetch
@@ -40,3 +45,10 @@
     owner: root
     group: root
     mode: '0755'
+
+- name: Adding existing user to group wireshark
+  user:
+    name: {{ lookup('env', 'USER') }}
+    groups: wireshark
+    append: true
+  become: true
