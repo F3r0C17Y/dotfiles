@@ -25,4 +25,5 @@
       - powerline
       - awesome-terminal-fonts
       - powerline-fonts
+      - dust
     state: present
