@@ -21,3 +21,9 @@
       - pkgconf
       - python-setuptools
       - python-poetry
+      - python-unicorn
+      - python-keystone
+      - ropper
+      - unicorn
+      - capstone
+      - python-capstone
