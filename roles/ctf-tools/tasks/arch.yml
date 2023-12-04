@@ -48,7 +48,7 @@
 
 - name: Adding existing user to group wireshark
   user:
-    name: {{ lookup('env', 'USER') }}
+    name: "{{ lookup('env', 'USER') }}"
     groups: wireshark
     append: true
   become: true
