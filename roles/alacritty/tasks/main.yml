@@ -1,8 +1,8 @@
 ---
 
 - name: Configure alacritty
-  become: no
+  become: false
   template:
-    src: templates/alacritty.yml
+    src: templates/alacritty.toml
     dest: $HOME/.config/alacritty/
     mode: '644'
