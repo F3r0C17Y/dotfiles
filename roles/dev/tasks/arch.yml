@@ -12,7 +12,7 @@
       - peda
       - direnv
       - ripgrep
-      - nodejs-lts-hydrogen
+      - nodejs
       - npm
       - rustup
       - cargo

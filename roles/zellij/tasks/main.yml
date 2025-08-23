@@ -1,0 +1,8 @@
+---
+
+- name: Configure zellij
+  become: false
+  template:
+    src: templates/config.kdl
+    dest: $HOME/.config/zellij/config.kdl
+    mode: '644'

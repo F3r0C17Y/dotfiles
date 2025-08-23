@@ -5,6 +5,7 @@
   become_user: root
   pacman:
     name:
+      - alacritty
       - cmake
       - wget
       - curl
@@ -27,4 +28,5 @@
       - powerline-fonts
       - dust
       - eza
+      - zellij
     state: present
