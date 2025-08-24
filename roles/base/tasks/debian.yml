@@ -1,2 +1,10 @@
 ---
 
+- name: Install base packages
+  become: true
+  apt:
+    pkg:
+      - git
+      - zsh
+      - neovim
+      - tmux

@@ -1,9 +1,11 @@
 ---
 
 - name: Install debugger python packages
-  ansible.builtin.pip:
-    name:
-      - capstone
-      - unicorn
-      - keystone-engine
-      - ropper
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - python3-capstone
+      - python3-unicorn
+     # - keystone-engine
+     # - ropper
+    state: present

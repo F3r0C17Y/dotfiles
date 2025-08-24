@@ -1,5 +1,12 @@
 ---
 
+- name: Create directory
+  become: false
+  ansible.builtin.file:
+    path: $HOME/.config/zellij
+    mode: '0755'
+    state: directory
+
 - name: Configure zellij
   become: false
   template:
