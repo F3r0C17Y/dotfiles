@@ -7,9 +7,38 @@
     mode: '0755'
     state: directory
 
+- name: Create plugins directory
+  become: false
+  ansible.builtin.file:
+    path: $HOME/.config/zellij/plugins
+    mode: '0755'
+    state: directory
+
+
+- name: Create layouts directory
+  become: false
+  ansible.builtin.file:
+    path: $HOME/.config/zellij/layouts
+    mode: '0755'
+    state: directory
+
+
 - name: Configure zellij
   become: false
   template:
     src: templates/config.kdl
     dest: $HOME/.config/zellij/config.kdl
     mode: '644'
+
+- name: Configure layouts
+  become: false
+  template:
+    src: templates/default.kdl
+    dest: $HOME/.config/zellij/layouts/default.kdl
+    mode: '644'
+
+- name: Copy plugins to plugin directory
+  ansible.builtin.copy:
+    src: files/*.wasm
+    dest: $HOME/.config/zellij/plugins/
+    remote_src: false
