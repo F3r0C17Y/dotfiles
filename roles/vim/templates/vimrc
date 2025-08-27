@@ -62,7 +62,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'cespare/vim-toml'                   " toml file syntax highlighting
 
     "------------------------------- Helper -----------------------------------"
-    Plug 'tpope/vim-commentary'               " Comment helper
+    Plug 'numToStr/Comment.nvim'    " Comments
     Plug 'ntpeters/vim-better-whitespace'     " Display whitespaces
     Plug 'jiangmiao/auto-pairs'
 
@@ -189,6 +189,11 @@ function ToggleMouse()
     endif
 endfunction
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Comments
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+lua require('Comment').setup()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indentation
@@ -212,7 +217,6 @@ set laststatus=2
 nmap <F9> :bprev<CR>
 nmap <F10> :bnext<CR>
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
