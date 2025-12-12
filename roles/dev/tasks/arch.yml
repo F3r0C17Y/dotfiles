@@ -6,7 +6,8 @@
   pacman:
     name:
       - brave-browser
-      - alacritty
+      # - alacritty
+      - kitty
       - gdb
       - gef
       - peda
@@ -14,6 +15,7 @@
       - ripgrep
       - nodejs
       - npm
+      - ccls
       - rustup
       - cargo
       - rustfmt

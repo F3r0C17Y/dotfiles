@@ -6,6 +6,8 @@
     pkg:
       - python3-capstone
       - python3-unicorn
-     # - keystone-engine
-     # - ropper
+      - ripgrep
+      - direnv
+      - kitty
+      - ccls
     state: present

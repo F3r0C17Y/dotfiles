@@ -39,7 +39,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
     "----------------------- Project and Code navigation ----------------------"
     Plug 'preservim/tagbar'
-    Plug 'kyazdani42/nvim-tree.lua', {'tag': 'nightly'}
+    Plug 'kyazdani42/nvim-tree.lua', {'tag': 'v1.14'}
     Plug 'kyazdani42/nvim-web-devicons'   " file icons
 
     "------------------------- Gurzr naq pbybefpurzrf -------------------------"

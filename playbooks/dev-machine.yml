@@ -15,4 +15,4 @@
     - gnupg
     - gdb
     - rust
-#    - zellij
+    - kitty

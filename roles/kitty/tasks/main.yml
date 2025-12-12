@@ -1,0 +1,17 @@
+---
+
+- name: Create directory
+  become: false
+  ansible.builtin.file:
+    path: $HOME/.config/kitty
+    mode: '0755'
+    state: directory
+
+
+- name: Write kitty config
+  become: false
+  ansible.builtin.copy:
+    src: files/kitty.conf
+    dest: $HOME/.config/kitty/kitty.conf
+    remote_src: false
+    mode: '644'
