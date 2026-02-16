@@ -16,9 +16,8 @@
       - python-virtualenv
       - python-virtualenvwrapper
       - tmux
-      - powerline
       - pcsc-tools
-      - xclip
+      # - xclip
       - wl-clipboard
       - starship
       - ccze
@@ -26,7 +25,10 @@
       - powerline
       - awesome-terminal-fonts
       - powerline-fonts
+      - noto-fonts-emoji
       - dust
       - eza
-      - zellij
+      - fd      # required for nvim
+      - ripgrep
+      # - zellij
     state: present

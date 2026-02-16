@@ -7,9 +7,13 @@
     dest: $HOME/.vimrc
     mode: '644'
 
-- name: Create nvim dir
-  file:
-    path: $HOME/.config/nvim
-    state: directory
+#- name: Create nvim dir
+#  file:
+#    path: $HOME/.config/nvim
+#    state: directory
 
+- name: Get latest kickstart update
+  ansible.builtin.git:
+    repo: git@github.com:F3r0C17Y/kickstart.nvim
+    dest: $HOME/.config/nvim
 

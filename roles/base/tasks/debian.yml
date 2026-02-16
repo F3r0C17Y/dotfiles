@@ -4,7 +4,21 @@
   become: true
   apt:
     pkg:
+      - alacritty
+      - cmake
+      - wget
+      - curl
       - git
       - zsh
       - neovim
       - tmux
+      - ctags
+      - powerline
+      - wl-clipboard
+      - starship
+      - jq
+      - noto-fonts-emoji
+      - dust
+      - eza
+      - fd
+      - ripgrep
