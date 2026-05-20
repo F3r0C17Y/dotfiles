@@ -30,3 +30,4 @@
       - capstone
       - python-capstone
       - git-cliff
+      - cocogitto
