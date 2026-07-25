@@ -17,6 +17,10 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+if [[ -e /usr/share/cachyos-zsh-config/cachyos-config.zsh ]]; then
+  source /usr/share/cachyos-zsh-config/cachyos-config.zsh
+fi
+
 {% else %}
 ############################################################
 # Ubuntu config
@@ -65,11 +69,11 @@ eval "$(direnv hook $SHELL)"
 
 eval "$(starship init zsh)"
 
-#powerline-daemon -q
+powerline-daemon -q
 #
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#     tmux attach -t default || exec tmux new -s default && exit;
-# fi
+ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+     tmux attach -t default || exec tmux new -s default && exit;
+ fi
 
 #if command -v zellij &> /dev/null && [ -z "$ZELLIJ" ]; then
 #  zellij attach -c $(basename "$(tty)")

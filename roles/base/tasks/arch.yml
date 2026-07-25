@@ -13,14 +13,11 @@
       - zsh
       - neovim
       - ctags
-      - python-virtualenv
-      - python-virtualenvwrapper
       - tmux
       - pcsc-tools
       # - xclip
       - wl-clipboard
       - starship
-      - ccze
       - jq
       - powerline
       - awesome-terminal-fonts
