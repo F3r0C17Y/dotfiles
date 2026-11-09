@@ -49,6 +49,7 @@ gpg --card-status
 ```shell
 cargo install cargo-audit cargo-update
 cargo install exa bandwhich
+cargo install forgejo-cli
 ```
 
 Keep installed binaries up-to-date
